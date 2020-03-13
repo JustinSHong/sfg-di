@@ -1,4 +1,4 @@
-package guru.springframework.sfgdi.services;
+package guru.services;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+// you can invoke callbacks at specific points in the Spring Bean Lifecycle
 @Component
 public class LifeCycleDemoBean implements InitializingBean, DisposableBean, BeanNameAware,
         BeanFactoryAware, ApplicationContextAware {

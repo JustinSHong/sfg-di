@@ -1,11 +1,13 @@
-package guru.springframework.sfgdi;
+package guru;
 
-import guru.springframework.sfgdi.controllers.*;
+import guru.springframework.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"guru.services", "guru.springframework"}) // tell Spring where to scan - override default
 public class SfgDiApplication {
 
 	public static void main(String[] args) {
