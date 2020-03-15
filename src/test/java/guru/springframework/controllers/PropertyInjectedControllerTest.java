@@ -1,6 +1,6 @@
 package guru.springframework.controllers;
 
-import guru.services.ConstructorGreetingService;
+import guru.springframework.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
