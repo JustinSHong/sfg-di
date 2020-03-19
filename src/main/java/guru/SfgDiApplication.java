@@ -2,6 +2,8 @@ package guru;
 
 import guru.springframework.controllers.*;
 import guru.springframework.examplebeans.FakeDataSource;
+import guru.springframework.examplebeans.FakeDataSource2;
+import guru.springframework.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -40,10 +42,19 @@ public class SfgDiApplication {
 
 		// PROPERTY SOURCE
 		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class); // give ctx the type of bean
-
 		System.out.println(fakeDataSource.getUser());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getUrl());
+
+		FakeJmsBroker fakeJmsBroker = ctx.getBean(FakeJmsBroker.class);
+		System.out.println(fakeJmsBroker.getUsername());
+		System.out.println(fakeJmsBroker.getPassword());
+		System.out.println(fakeJmsBroker.getUrl());
+
+		FakeDataSource2 fakeDataSource2 = ctx.getBean(FakeDataSource2.class);
+		System.out.println(fakeDataSource2.getUser());
+		System.out.println(fakeDataSource2.getPassword());
+		System.out.println(fakeDataSource2.getUrl());
 	}
 
 }
