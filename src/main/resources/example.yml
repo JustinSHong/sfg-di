@@ -1,0 +1,47 @@
+# this is a comment - ignored by yaml / not a data property
+
+name: Justin
+
+# yaml is space-sensitive - use 2 or 4 spaces
+# arrays
+names:
+  - Justin
+  - Paul
+  - Ringo
+
+# anything after a pound sign is considered a value
+pound_sign: "#"
+
+# complex objects
+book:
+  author: Joe Buck
+  publisher: random house
+
+# booleans - true
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+#booleans - false
+false: no
+
+another_false: false
+
+more_false: FALSE
+
+# strings - always use double quotes
+string_val: "This is it's quote"
+
+# multi-line characters - new lines are included with |
+include_new_lines: |
+  asdf asdf asdf
+  asdf asdf asdf
+  asdf dd adf
+
+# new lines are dropped
+ignore_new_lines: >
+  this is
+  just one long
+  string
