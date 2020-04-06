@@ -1,0 +1,13 @@
+guru:
+  kafka:
+    username: Kafka Username
+    password: somepass433333
+    url: KafkaUrl
+
+# file separator ---> same as application-de.properties
+---
+spring:
+  profiles: de # everything below is part of this profile
+guru:
+  jms:
+    username: JMS Username ---- GERMAN

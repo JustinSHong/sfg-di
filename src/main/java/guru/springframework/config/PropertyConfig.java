@@ -3,6 +3,7 @@ package guru.springframework.config;
 import guru.springframework.examplebeans.FakeDataSource;
 import guru.springframework.examplebeans.FakeDataSource2;
 import guru.springframework.examplebeans.FakeJmsBroker;
+import guru.springframework.examplebeans.FakeKafkaBroker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -60,6 +61,30 @@ public class PropertyConfig {
 
     @Value("${guru.datasource2.dburl}")
     String datasource2url;
+
+    // values from application.yml
+    @Value("${guru.username}")
+    String translatedUsername;
+
+    @Value("${guru.kafka.username}")
+    String kafkaUsername;
+
+    @Value("${guru.kafka.password}")
+    String kafkaPassword;
+
+    @Value("${guru.kafka.url}")
+    String kafkaurl;
+
+    @Bean
+    public FakeKafkaBroker fakeKafkaBroker() {
+        FakeKafkaBroker fakeKafkaBroker = new FakeKafkaBroker();
+//        fakeKafkaBroker.setUser(kafkaUsername);
+        fakeKafkaBroker.setUser(translatedUsername);
+        fakeKafkaBroker.setPassword(kafkaPassword);
+        fakeKafkaBroker.setUrl(kafkaurl);
+
+        return fakeKafkaBroker;
+    }
 
     @Bean
     public FakeJmsBroker fakeJmsBroker() {

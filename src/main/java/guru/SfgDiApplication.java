@@ -4,6 +4,7 @@ import guru.springframework.controllers.*;
 import guru.springframework.examplebeans.FakeDataSource;
 import guru.springframework.examplebeans.FakeDataSource2;
 import guru.springframework.examplebeans.FakeJmsBroker;
+import guru.springframework.examplebeans.FakeKafkaBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -55,6 +56,13 @@ public class SfgDiApplication {
 		System.out.println(fakeDataSource2.getUser());
 		System.out.println(fakeDataSource2.getPassword());
 		System.out.println(fakeDataSource2.getUrl());
+
+		FakeKafkaBroker fakeKafkaBroker = ctx.getBean(FakeKafkaBroker.class);
+		System.out.println(fakeKafkaBroker.getUser());
+		System.out.println(fakeKafkaBroker.getPassword());
+		System.out.println(fakeDataSource2.getUrl());
+
+
 	}
 
 }
